@@ -1,0 +1,112 @@
+\documentclass[11pt,fleqn]{article}
+
+\usepackage{shorttoc}
+\usepackage{makeidx, natbib, vmargin, setspace}
+\usepackage{tabu}
+\usepackage{color}
+\usepackage{amsfonts, amssymb, amsthm, amsmath}
+\usepackage[T1]{fontenc}
+\usepackage[colorlinks=true, pdfstartview=FitV, citecolor=blue!50!black, linkcolor=red!30!black]{hyperref}
+\usepackage{graphicx, graphics, tikz}
+\usepackage{eqnarray}
+\usepackage{setspace}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{thmtools}
+\usepackage[section]{placeins}
+
+\restylefloat{table}
+
+\parskip 0.05in
+
+\usepackage{appendix}
+\usepackage{chngcntr}
+\usepackage{etoolbox}
+
+\AtBeginEnvironment{subappendices}{%
+\chapter*{Appendix for Chapter~\thechapter}
+\addcontentsline{toc}{chapter}{Appendices}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+
+\makeatletter
+
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+
+\newcounter{llst}
+\newenvironment{abet}{\begin{list}{\rm (\alph{llst})}{\usecounter{llst}
+\setlength{\itemindent}{0em} \setlength{\leftmargin}{3em}
+\setlength{\labelwidth}{2em} \setlength{\labelsep}{1em}}}{\end{list}}
+\newenvironment{numm}{\begin{list}{\rm (\roman{llst})}{\usecounter{llst}
+\setlength{\itemindent}{0em} \setlength{\leftmargin}{3.5em}
+\setlength{\labelwidth}{2.5em} \setlength{\labelsep}{1em}}}{\end{list}}
+
+\renewcommand{\baselinestretch}{1.25}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{expl}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{property}[theorem]{Properties}
+\newtheorem{rmrk}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent \textbf{#1.} }{\hfill
+\rule{0.5em}{0.5em}}
+
+\newenvironment{example}{\begin{expl} \rm}{\hfill $\blacklozenge$ \end{expl}}{}
+\newenvironment{remark}{\begin{rmrk} \rm}{\hfill $\blacklozenge$ \end{rmrk}}{}
+
+\counterwithin{figure}{section}
+
+\begin{document}
+
+\title{\textbf{Contestability and Critical Nodes in Directed Networks}}
+\author{Owen Sims}
+\date{\today}
+\maketitle
+
+\begin{abstract}
+Insert abstract here.
+\end{abstract}
+
+\newpage
+
+\section{The criticality of middlemen in networks}
+
+Let's begin!
+
+\newpage
+
+\singlespace
+
+\bibliographystyle{agsm}
+\bibliography{OSDB}
+
+\end{document}
